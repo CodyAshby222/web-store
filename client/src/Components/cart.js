@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router";
-import CartItem from "../cartItemComponent";
+import CartItem from "./cartItemComponent";
 
 const Cart = ({ closeMenu, loggedIn, userKey }) => {
   const [cartList, setCartList] = useState([]);

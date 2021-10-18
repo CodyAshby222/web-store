@@ -1,12 +1,12 @@
 import React, {Component, isValidElement} from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Landing from './landing';
-import Product from './product';
-import Login from './login';
-import Signup from './signup';
-import EditAccount from './editAccount';
+import Landing from './Components/landing';
+import Product from './Components/product';
+import Login from './Components/login';
+import Signup from './Components/signup';
+import EditAccount from './Components/editAccount';
 import Cart from './Components/cart';
-import Orders from './orders';
+import Orders from './Components/orders';
 
 
 

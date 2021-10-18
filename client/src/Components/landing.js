@@ -14,7 +14,7 @@ const Landing = ({closeMenu}) => {
             .then(response => {
                 setItemList(response);
             });
-    });
+    }, []);
 
     if (!itemList) {
         return (
