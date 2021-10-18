@@ -1,45 +1,37 @@
-import React, { Component} from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import Item from './itemComponent';
 
-class Landing extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            itemList: []
-        };
-    }
+const Landing = ({closeMenu}) => {
 
-    componentDidMount() {
-        this.props.closeMenu();
+    let [itemList, setItemList] = useState([]);
+
+    useEffect(() => {
+        closeMenu();
         fetch(`http://localhost:3001/items`)
-        .then(response => {
-            return response.json();
-        })
-        .then(response => {
-            this.setState({
-                itemList: response
+            .then(response => {
+                return response.json();
+            })
+            .then(response => {
+                setItemList(response);
             });
-        });
-    }
+    });
 
-    render() {
-        if(!this.state.itemList) {
-            return( 
-                <section className="mainSection">
-                    <h1 className="pageTitle">Products</h1>
-                    <div id="itemContainer"></div> 
-                </section>
-            )
-        }
-        return(
+    if (!itemList) {
+        return (
             <section className="mainSection">
                 <h1 className="pageTitle">Products</h1>
-                <div id="itemContainer">
-                    {this.state.itemList.map(entry => (<Item entry={entry} key={entry.itemID} />))}
-                </div>
+                <div id="itemContainer"></div>
             </section>
-        );
+        )
     }
-}
+    return (
+        <section className="mainSection">
+            <h1 className="pageTitle">Products</h1>
+            <div id="itemContainer">
+                {itemList.map(entry => (<Item entry={entry} key={entry.itemID} />))}
+            </div>
+        </section>
+    );
+};
 
 export default Landing;
