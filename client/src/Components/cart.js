@@ -17,7 +17,7 @@ const Cart = ({ closeMenu, loggedIn, userKey }) => {
           return response.json();
         })
         .then((response) => {
-          cartList(response);
+          setCartList(response);
 
           console.log(response);
         });
