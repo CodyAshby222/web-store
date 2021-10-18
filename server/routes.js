@@ -21,7 +21,7 @@ hashString = (value, callback, req, res) => {
 }
 
 exports.root = (req, res) => {
-    res.send("Working");
+    res.send("Working again");
 }
 
 

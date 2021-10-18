@@ -5,7 +5,7 @@ import Product from './product';
 import Login from './login';
 import Signup from './signup';
 import EditAccount from './editAccount';
-import Cart from './cart';
+import Cart from './Components/cart';
 import Orders from './orders';
 
 
