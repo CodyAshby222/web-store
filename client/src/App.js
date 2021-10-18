@@ -1,6 +1,6 @@
 import React, {Component, isValidElement} from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Landing from './landing';
+import Landing from './Components/landing';
 import Product from './product';
 import Login from './login';
 import Signup from './signup';
