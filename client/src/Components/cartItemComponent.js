@@ -8,7 +8,7 @@ const CartItem = (cartItem, action) => {
     }
 
     const deleteItem = () => {
-        action(this.props.cartItem.itemID, -1);
+        action(cartItem.itemID, -1);
     }
 
     if (cartItem.quantity >= 0) {
