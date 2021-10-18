@@ -1,32 +1,23 @@
-import React, { Component} from 'react';
+import React, { Component, useState} from 'react';
 import { Redirect } from 'react-router';
 
 
-class Item extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            redirect: null
-        };
-    }
+const Item = ({entry}) => {
+    let [redirect, setRedirect] = useState(null);
 
-    redirectToProduct = () => {
-        this.setState({
-            redirect: `/product/${this.props.entry.itemID}`
-        });
+    const redirectToProduct = () => {
+        setRedirect(redirect = `/product/${entry.itemID}`);
     }
-    render() {
-        if(this.state.redirect) {
-            return <Redirect to={this.state.redirect} />
+        if(redirect) {
+            return <Redirect to={redirect} />
         }
         return(
-                <div className="itemDiv" onClick={this.redirectToProduct}>
-                    <img src={this.props.entry.imgSrc}/>
-                    <p className="nameTag">{this.props.entry.name}</p>
-                    <p className="priceTag">${this.props.entry.price}</p>
+                <div className="itemDiv" onClick={redirectToProduct}>
+                    <img src={entry.imgSrc}/>
+                    <p className="nameTag">{entry.name}</p>
+                    <p className="priceTag">${entry.price}</p>
                 </div>
         );
     }
-}
 
 export default Item;
