@@ -7,7 +7,7 @@ const Orders = ({ closeMenu, loggedIn, userKey }) => {
   const [redirect, setRedirect] = useState(null);
 
   useEffect(() => {
-    closeMenu();
+    // closeMenu();
     if (!loggedIn) {
       setRedirect("/login");
     } else {
