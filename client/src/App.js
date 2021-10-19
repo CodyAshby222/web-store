@@ -1,4 +1,4 @@
-import React, {Component, isValidElement} from 'react';
+import React, {useState,useEffect} from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Landing from './Components/landing';
 import Product from './Components/product';
@@ -10,101 +10,95 @@ import Orders from './Components/orders';
 
 
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+const App= ()=> {
+  const [key,setKey] = useState("")
+  const [name,setName] = useState("")
+  const [email,setEmail] = useState("")
+  const [loggedIn,setLoggedIn] = useState(false)
+  const [showMenu,setShowMenu] = useState(false)
 
-    this.state = {
-      key: "",
-      name: "",
-      email: "",
-      loggedIn: false,
-      showMenu: false
-    };
+  
+
+  const changeKey = (key, name, email) => {
+    setKey(key)
+    setName(name)
+    setEmail(email)
+
+    isValid();
   }
 
-  changeKey = (key, name, email) => {
-    this.setState({
-      key: key,
-      name: name,
-      email: email
-    });
-    this.isValid();
+  const updateUser = (name, email) => {
+    
+    setName(name);
+    setEmail(email)
   }
 
-  updateUser = (name, email) => {
-    this.setState({
-      name: name,
-      email: email
-    });
-  }
-
-  isValid = () => {
-    fetch(`http://localhost:3001/validateKey?key=${this.state.key}`)
+  const isValid = () => {
+    fetch(`http://localhost:3001/validateKey?key=${key}`)
     .then(response => {
         return response.json();
     }).then(data => {
-        this.setState({
-          loggedIn: data
-        });
+      setLoggedIn(data)
+        
     });
   }
 
-  closeMenu = () => {
-    this.setState({
-      showMenu: false
-    });
+  const closeMenu = () => {
+    
+
+    setShowMenu(false)
   }
 
-  signout = () => {
+  const signout = () => {
     console.log("Signed out");
-    this.setState({
-      name: "",
-      email: "",
-      key: "",
-      loggedIn: false,
-      showMenu: false
-    });
+    setName("")
+    setEmail("")
+    setKey("")
+    setLoggedIn(false)
+    setShowMenu(false)
+
+
+    
   }
 
-  toggleMenu = () => {
-    console.log(this.state.showMenu);
-    this.setState((prevState) => ({
-      showMenu: !prevState.showMenu
-    }));
+  const toggleMenu = () => {
+    console.log(showMenu);
+    
+
+    setShowMenu(!showMenu);
   }
 
-  render() {
-    console.log("Logged in: ", this.state.loggedIn);
-    let routes = <> <Route exact path="/" render={props => 
-                  (<Landing closeMenu={this.closeMenu}/>)}/>
+  
+  console.log("Logged in: ", loggedIn);
+  let routes = <> <Route exact path="/" render={props => 
+                  (<Landing closeMenu={closeMenu}/>)}/>
                 <Route path="/product/:id" render={props => 
-                  (<Product itemID={props.match.params.id} loggedIn={this.state.loggedIn} userKey={this.state.key}/>)}/>
+                  (<Product itemID={props.match.params.id} loggedIn={loggedIn} userKey={key}/>)}/>
                 <Route exact path="/login" render={props => 
-                  (<Login action={this.changeKey}/>)}/>
+                  (<Login action={changeKey}/>)}/>
                 <Route exact path="/signup" render={props => 
                   (<Signup/>)}/>
                 <Route exact path="/account/edit" render={props => 
-                  (<EditAccount name={this.state.name} email={this.state.email} loggedIn={this.state.loggedIn} userKey={this.state.key} updateUser={this.updateUser} closeMenu={this.closeMenu}/>)}/>
+                  (<EditAccount name={name} email={email} loggedIn={loggedIn} userKey={key} updateUser={updateUser} closeMenu={closeMenu}/>)}/>
                 <Route exact path="/cart" render={props => 
-                  (<Cart userKey={this.state.key} loggedIn={this.state.loggedIn} closeMenu={this.closeMenu}/>)}/>
+                  (<Cart userKey={key} loggedIn={loggedIn} closeMenu={closeMenu}/>)}/>
                 <Route exact path="/orders" render={props => 
-                  (<Orders userKey={this.state.key} loggedIn={this.state.loggedIn} closeMenu={this.closeMenu}/>)}/> </>;
+                  (<Orders userKey={key} loggedIn={loggedIn} closeMenu={closeMenu}/>)}/> </>;
 
     return (
       <Router>
         <nav>
-          {this.state.loggedIn && <>
+          {loggedIn && <>
             <div><Link to="/" className="navLink">Home</Link></div>
-            <section><div className="toggleNav navLink" onClick={() => this.toggleMenu()}>{this.state.name}</div></section>
-            <div id="navMenu" className={this.state.showMenu ? "" : "collapsed"}>
+            <section><div className="toggleNav navLink" onClick={() => toggleMenu()}>{name}</div></section>
+            <div id="navMenu" className={showMenu ? "" : "collapsed"}>
               <Link to="/account/edit">Edit Account</Link>
               <Link to="/orders">Your Orders</Link>
               <Link to="/cart">Cart</Link>
-              <div onClick={() => this.signout()} className="signoutText">Sign Out</div> 
+              <div onClick={() => signout()} className="signoutText">Sign Out</div> 
             </div></>
           }
-          {!this.state.loggedIn && <>
+          {!loggedIn && <>
             <div><Link to="/" className="navLink">Home</Link></div>
             <section><div><Link to="/signup" className="navLink">Sign Up</Link></div>
             <div><Link to="/login" className="navLink">Log In</Link></div></section></>
@@ -114,7 +108,7 @@ class App extends Component {
         
       </Router>
     );
-  }
+  
   
 }
 
