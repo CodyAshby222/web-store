@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-const CartItem = (cartItem, action) => {
+const CartItem = ({cartItem, action}) => {
 
     const changeQuantity = delta => {
         action(cartItem.itemID, cartItem.quantity + delta);
