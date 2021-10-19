@@ -2,7 +2,7 @@ import React, { Component, useEffect, useState } from 'react';
 import { Redirect } from 'react-router';
 
 
-const EditAccount = ({ closeMenu, updateUser, loggedIn }) => {
+const EditAccount = ({ closeMenu, updateUser, loggedIn, userKey }) => {
 
     let [name, setName] = useState();
     let [email, setEmail] = useState();
@@ -15,7 +15,7 @@ const EditAccount = ({ closeMenu, updateUser, loggedIn }) => {
 
     useEffect(() => {
         closeMenu();
-        if (!this.props.loggedIn) {
+        if (!loggedIn) {
             setRedirect(redirect = "/");
         }
     }, [])
@@ -44,7 +44,7 @@ const EditAccount = ({ closeMenu, updateUser, loggedIn }) => {
 
 
         let putData = getPutData();
-        fetch(`http://localhost:3001/user?key=${this.props.userKey}`, {
+        fetch(`http://localhost:3001/user?key=${userKey}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(putData)
@@ -75,17 +75,17 @@ const EditAccount = ({ closeMenu, updateUser, loggedIn }) => {
             <section className="formSection">
                 <div>
                     <label htmlFor="email">Email: </label>
-                    <input id="email" type="email" value={email} onChange={event => setEmail({ email: event.target.value })} />
+                    <input id="email" type="email" value={email} onChange={event => setEmail(email = event.target.value)} />
                 </div>
                 <div>
                     <label htmlFor="name">Name: </label>
-                    <input id="name" type="text" value={name} onChange={event => setName({ name: event.target.value })} />
+                    <input id="name" type="text" value={name} onChange={event => setName(name = event.target.value)} />
                 </div>
                 <div className="passwordDiv">
                     <label htmlFor="password">Password: </label>
-                    <input id="password" type="password" value={password} onChange={event => setPassword({ password: event.target.value })} />
+                    <input id="password" type="password" value={password} onChange={event => setPassword(password = event.target.value )} />
                     <label htmlFor="confirmPass">Confirm Password: </label>
-                    <input id="confirmPass" type="password" value={confirmPass} onChange={event => setConfirmPass({ confirmPass: event.target.value })} />
+                    <input id="confirmPass" type="password" value={confirmPass} onChange={event => setConfirmPass(confirmPass = event.target.value)} />
                 </div>
                 <p className={displayError ? "errMsg" : "errMsg hidden"}>{errorMsg}</p>
                 <button onClick={sumbitData}>Submit</button>
