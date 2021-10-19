@@ -70,7 +70,7 @@ const Cart = ({ closeMenu, loggedIn, userKey }) => {
     });
   },[]);
 
-  if (loggedIn) {
+  if (!loggedIn) {
     return <Redirect to="/" />;
   }
   if (redirect) {
