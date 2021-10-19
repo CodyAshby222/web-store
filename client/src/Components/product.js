@@ -1,123 +1,107 @@
-import React, { Component} from 'react';
-import { Redirect } from 'react-router';
+import React, { useEffect, useState } from "react";
+import { Redirect } from "react-router";
 
+const Product = ({ itemID, loggedIn, userKey }) => {
+  const [ID] = useState(itemID);
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState(0);
+  const [protection, setProtection] = useState(0);
+  const [rating, setRating] = useState(0);
+  const [weight, setWeight] = useState(0);
+  const [imgSrc, setImgSrc] = useState("");
+  const [redirect, setRedirect] = useState(null);
+  const [showPrompt, setShowPrompt] = useState(false);
 
-class Product extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            itemID: this.props.itemID,
-            name: "",
-            price: 0,
-            protection: 0,
-            rating: 0,
-            weight: 0,
-            imgSrc: "",
-            redirect: null,
-            showPrompt: false
-        };
-    }
+  useEffect(() => {
+    fetch(`http://localhost:3001/item/${ID}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setName(data.name);
+        setPrice(data.price);
+        setProtection(data.protection);
+        setRating(data.rating);
+        setWeight(data.weight);
+        setImgSrc(data.imgSrc);
+        console.log(data);
+      });
+  }, []);
 
-    componentDidMount() {
-        fetch(`http://localhost:3001/item/${this.state.itemID}`)
-        .then(response => {
-            return response.json();
-        }).then(data => {
-            this.setState({
-            name: data.name,
-            price: data.price,
-            protection: data.protection,
-            rating: data.rating,
-            weight: data.weight,
-            imgSrc: data.imgSrc
-            });
-            console.log(data);
-        });
-    }
+  const backToHome = () => {
+    setRedirect("/");
+  };
 
-    backToHome = () => {
-        this.setState({
-            redirect: "/"
-        });
+  const addToCart = () => {
+    if (!loggedIn) {
+      setRedirect("/login");
+    } else {
+      fetch(`http://localhost:3001/cart?key=${userKey}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ itemID: ID }),
+      }).then((res) => {
+        setShowPrompt(true);
+        setTimeout(() => {
+          setShowPrompt(false);
+        }, 1100);
+      });
     }
+  };
 
-    addToCart = () => {
-        if(!this.props.loggedIn) {
-            this.setState({
-                redirect: "/login"
-            });
-        }
-        else{
-            fetch(`http://localhost:3001/cart?key=${this.props.userKey}`, {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({itemID: this.state.itemID})
-            }).then(response => {
-                this.setState({
-                    showPrompt:true
-                });
-                setTimeout(() => {
-                    this.setState({
-                        showPrompt: false
-                    });
-                }, 1100);
-            });
-        }
+  const routeToCart = () => {
+    if (loggedIn) {
+      setRedirect("/cart");
+    } else {
+      setRedirect("/login");
     }
+  };
 
-    routeToCart = () => {
-        if(this.props.loggedIn) {
-            this.setState({
-                redirect: "/cart"
-            });
-        }
-        else {
-            this.setState({
-                redirect: "/login"
-            });
-        }
-    }
-    render() {
-        if(this.state.redirect) {
-            return <Redirect to={this.state.redirect} />
-        }
-        return(
-            <section className="mainSection">
-                <h1 className="pageTitle">{this.state.name}</h1>
-                <div id="itemAddedPrompt" className={this.state.showPrompt ? "" : "disabled"}>Item Added to Cart</div>
-                <section className="product">
-                    <div className="tableContainer">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>Weight</td>
-                                    <td>{this.state.weight} oz</td>
-                                </tr>
-                                <tr>
-                                    <td>Protection</td>
-                                    <td>{this.state.protection}%</td>
-                                </tr>
-                                <tr>
-                                    <td>Rating</td>
-                                    <td>{this.state.rating}</td>
-                                </tr>
-                                <tr>
-                                    <td>Price</td>
-                                    <td>${this.state.price}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <img src={"/" + this.state.imgSrc}/>
-                    <div className="returnBtnDiv"><button onClick={this.backToHome}>Go Back</button></div>
-                    <div className="addToCartDiv">
-                        <button onClick={this.addToCart}>Add to Cart</button>
-                        <p className="link" onClick={() => this.routeToCart()}>Go to Cart</p>
-                    </div>
-                </section>
-            </section>
-        );
-    }
-}
+  if (redirect) {
+    return <Redirect to={redirect} />;
+  }
+  return (
+    <section className="mainSection">
+      <h1 className="pageTitle">{name}</h1>
+      <div id="itemAddedPrompt" className={showPrompt ? "" : "disabled"}>
+        Item Added to Cart
+      </div>
+      <section className="product">
+        <div className="tableContainer">
+          <table>
+            <tbody>
+              <tr>
+                <td>Weight</td>
+                <td>{weight} oz</td>
+              </tr>
+              <tr>
+                <td>Protection</td>
+                <td>{protection}%</td>
+              </tr>
+              <tr>
+                <td>Rating</td>
+                <td>{rating}</td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td>${price}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <img src={"/" + imgSrc} />
+        <div className="returnBtnDiv">
+          <button onClick={backToHome}>Go Back</button>
+        </div>
+        <div className="addToCartDiv">
+          <button onClick={addToCart}>Add to Cart</button>
+          <p className="link" onClick={() => routeToCart()}>
+            Go to Cart
+          </p>
+        </div>
+      </section>
+    </section>
+  );
+};
 
 export default Product;
