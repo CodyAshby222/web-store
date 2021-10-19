@@ -11,7 +11,7 @@ const Signup = () => {
   const [redirect, setRedirect] = useState();
 
   const sumbitData = () => {
-    if (password != confirmPass) {
+    if (password !== confirmPass) {
       setErrorMsg("Passwords do not match");
       setDisplayError(true);
       return;
