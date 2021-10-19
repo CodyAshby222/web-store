@@ -6,11 +6,11 @@ const EditAccount = ({ closeMenu, updateUser, loggedIn }) => {
 
     let [name, setName] = useState();
     let [email, setEmail] = useState();
-    let [password, setPassword] = useState();
-    let [confirmPass, setConfirmPass] = useState();
-    let [displayError, setDisplayError] = useState();
-    let [redirect, setRedirect] = useState();
-    let [errorMsg, setErrorMsg] = useState();
+    let [password, setPassword] = useState("");
+    let [confirmPass, setConfirmPass] = useState("");
+    let [displayError, setDisplayError] = useState(false);
+    let [redirect, setRedirect] = useState(null);
+    let [errorMsg, setErrorMsg] = useState("");
 
 
     useEffect(() => {
