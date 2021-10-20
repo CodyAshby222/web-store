@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Landing from './Components/landing';
+import ProdcustPage from './Components/productsPage';
 import Product from './Components/product';
 import Login from './Components/login';
 import Signup from './Components/signup';
@@ -70,8 +71,11 @@ const App= ()=> {
 
   
   console.log("Logged in: ", loggedIn);
-  let routes = <> <Route exact path="/" render={props => 
-                  (<Landing closeMenu={closeMenu}/>)}/>
+  let routes = <> <Route exact path="/products" render={props => 
+                  (<ProdcustPage closeMenu={closeMenu}/>)}/>
+                  <Route exact path="/" render={props=>(
+                    <Landing closeMenu={closeMenu}/>
+                  )}/>
                 <Route path="/product/:id" render={props => 
                   (<Product itemID={props.match.params.id} loggedIn={loggedIn} userKey={key}/>)}/>
                 <Route exact path="/login" render={props => 
