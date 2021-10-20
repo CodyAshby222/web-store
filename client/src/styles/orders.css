@@ -1,0 +1,9 @@
+/* Orders */
+#orderContainer {
+  margin: auto;
+  width: fit-content;
+  text-align: center;
+}
+#orderContainer > table th {
+  padding: 0.3em 2em;
+}
