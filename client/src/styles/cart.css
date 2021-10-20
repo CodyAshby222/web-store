@@ -1,0 +1,28 @@
+/* Cart */
+.delBtn {
+  background-color: red;
+  color: white;
+}
+
+.cartContainer {
+  margin: auto;
+  width: fit-content;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+}
+.cartContainer table th {
+  padding: 0.3em 2em;
+}
+.cartContainer > .container {
+  grid-row: 1;
+}
+.cartContainer > .checkout {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.cartContainer > .checkout > .buttonContainer {
+  grid-column: 2;
+  margin: auto;
+}

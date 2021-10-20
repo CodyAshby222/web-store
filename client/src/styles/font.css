@@ -1,0 +1,14 @@
+/* font */
+p,
+a,
+td,
+th,
+h1,
+label,
+input,
+button,
+.signoutText,
+#itemAddedPrompt,
+.toggleNav {
+  font-family: "Montserrat", sans-serif;
+}
