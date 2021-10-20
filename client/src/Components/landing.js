@@ -1,37 +1,12 @@
-import React, { Component, useEffect, useState } from 'react';
-import Item from './itemComponent';
+import React from 'react'
 
-const Landing = ({closeMenu}) => {
-
-    let [itemList, setItemList] = useState([]);
-
-    useEffect(() => {
-        closeMenu();
-        fetch(`http://localhost:3001/items`)
-            .then(response => {
-                return response.json();
-            })
-            .then(response => {
-                setItemList(response);
-            });
-    }, []);
-
-    if (!itemList) {
-        return (
-            <section className="mainSection">
-                <h1 className="pageTitle">Products</h1>
-                <div id="itemContainer"></div>
-            </section>
-        )
-    }
+function landing({closeMenu}) {
     return (
-        <section className="mainSection">
-            <h1 className="pageTitle">Products</h1>
-            <div id="itemContainer">
-                {itemList.map(entry => (<Item entry={entry} key={entry.itemID} />))}
-            </div>
+        <section>
+            <h1>landing page</h1>
+            <h1>hello how is it going today</h1>
         </section>
-    );
-};
+    )
+}
 
-export default Landing;
+export default landing

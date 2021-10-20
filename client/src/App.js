@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Landing from "./Components/landing";
+import ProdcustPage from "./Components/productsPage";
 import Product from "./Components/product";
 import Login from "./Components/login";
 import Signup from "./Components/signup";
@@ -61,6 +62,11 @@ const App = () => {
   let routes = (
     <>
       {" "}
+      <Route
+        exact
+        path="/products"
+        render={(props) => <ProdcustPage closeMenu={closeMenu} />}
+      />
       <Route
         exact
         path="/"
