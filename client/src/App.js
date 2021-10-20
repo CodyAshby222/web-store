@@ -129,6 +129,11 @@ const App = () => {
                 Home
               </Link>
             </div>
+            <div>
+              <Link to="/products" className="navLink">
+                Products
+              </Link>
+            </div>
             <section>
               <div className="toggleNav navLink" onClick={() => toggleMenu()}>
                 {name}
@@ -151,12 +156,18 @@ const App = () => {
                 Home
               </Link>
             </div>
+            <div>
+              <Link to="/products" className="navLink">
+                Products
+              </Link>
+            </div>
             <section>
               <div>
                 <Link to="/signup" className="navLink">
                   Sign Up
                 </Link>
               </div>
+
               <div>
                 <Link to="/login" className="navLink">
                   Log In
