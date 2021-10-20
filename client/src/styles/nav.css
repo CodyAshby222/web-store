@@ -38,8 +38,11 @@ nav a,
   border-bottom: 1px solid black;
 }
 
-/* .mainSection {
-} */
+.mainSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
 
 .signoutText,
 .toggleNav {
@@ -47,7 +50,7 @@ nav a,
 }
 
 .pageTitle {
-  padding: 1em 0 0 3em;
+  text-align: center;
 }
 
 #navMenu {

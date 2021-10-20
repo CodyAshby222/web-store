@@ -9,6 +9,7 @@ import "./styles/font.css";
 import "./styles/login.css";
 import "./styles/orders.css";
 import "./styles/product.css";
+import "./styles/background.css";
 import App from "./App";
 
 ReactDOM.render(

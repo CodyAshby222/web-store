@@ -53,8 +53,8 @@ const Signup = () => {
   }
   return (
     <section className="mainSection">
-      <h1 className="pageTitle">Sign Up</h1>
       <section className="formSection">
+        <h1 className="pageTitle">Sign Up</h1>
         <div>
           <label htmlFor="name">Name: </label>
           <input
@@ -97,6 +97,11 @@ const Signup = () => {
           Already have an account? Log in <a href="/login">here</a>
         </p>
       </section>
+      <img
+        className="orange-bg"
+        src="/orange_background.png"
+        alt="Orange Background"
+      />
     </section>
   );
 };
