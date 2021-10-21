@@ -1,3 +1,44 @@
-.landing__mainContent{
-    margin-top: 3.5em ;
+.landing__mainContent {
+  /* margin-top: 3.5em; */
+
+  display: flex;
+
+  height: 87vh;
+
+  overflow-y: hidden;
+}
+
+/* content container */
+.landing__content {
+  margin-left: 50px;
+  border: 1px solid black;
+
+  height: 100vh;
+}
+
+/* image container */
+
+.landing__images {
+  width: 100%;
+  max-height: 60vh;
+
+  position: relative;
+}
+
+.peopleImg {
+  position: absolute;
+  height: 90vh;
+  z-index: 2;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.orangeBackgroundImg {
+  position: absolute;
+
+  z-index: 1;
+
+  height: 90vh;
+
+  width: 800px;
 }
