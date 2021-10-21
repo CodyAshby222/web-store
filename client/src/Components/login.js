@@ -40,8 +40,8 @@ const Login = ({ action }) => {
     return <Redirect to={redirect} />;
   }
   return (
-    <section className="mainSection">
-      <section className="formSection">
+    <section style={{ marginTop: 150 }} className="mainSection">
+      <section className="loginFormSection">
         <h1 className="pageTitle">Log In</h1>
         <div>
           <label htmlFor="email">Email: </label>
@@ -64,8 +64,10 @@ const Login = ({ action }) => {
         <p className={displayError ? "errMsg" : "errMsg hidden"}>
           Invalid email and/or password
         </p>
-        <button onClick={sumbitData}>Log in</button>
-        <p>
+        <button className="orange-btn" onClick={sumbitData}>
+          Submit
+        </button>
+        <p style={{ margin: 25 }}>
           Don't have an account? Get one <a href="/signup">here</a>
         </p>
       </section>

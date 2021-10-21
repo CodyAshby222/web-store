@@ -3,3 +3,18 @@
 button {
   cursor: pointer;
 }
+
+.orange-btn {
+  background-color: #f19f1d;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.orange-btn:hover {
+  background-color: #e0941a;
+}

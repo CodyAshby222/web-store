@@ -92,7 +92,13 @@ const Signup = () => {
           />
         </div>
         <p className={displayError ? "errMsg" : "errMsg hidden"}>{errorMsg}</p>
-        <button onClick={sumbitData}>Sign up</button>
+        <button
+          style={{ marginTop: 30, marginBottom: 30 }}
+          className="orange-btn"
+          onClick={sumbitData}
+        >
+          Sign up
+        </button>
         <p>
           Already have an account? Log in <a href="/login">here</a>
         </p>

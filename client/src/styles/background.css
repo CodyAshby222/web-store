@@ -1,8 +1,8 @@
 .orange-bg {
   position: absolute;
-  top: 80px;
+  top: 135px;
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;
-  width: 700px;
+  width: 650px;
 }
