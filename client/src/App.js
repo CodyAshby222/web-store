@@ -6,7 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Landing from "./Components/landing";
-import ProdcustPage from "./Components/productsPage";
+import ProductsPage from "./Components/productsPage";
 import Product from "./Components/product";
 import Login from "./Components/login";
 import Signup from "./Components/signup";
@@ -70,7 +70,7 @@ const App = () => {
         <Route
           exact
           path="/products"
-          render={(props) => <ProdcustPage closeMenu={closeMenu} />}
+          render={(props) => <ProductsPage closeMenu={closeMenu} />}
         />
       ) : (
         <Redirect to="/" />
