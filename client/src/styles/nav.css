@@ -80,3 +80,10 @@ nav a,
 #navMenu.collapsed {
   height: 0;
 }
+
+.navTitle {
+  color: black;
+  font-size: 30px;
+  margin-left: 20px;
+  font-weight: 700;
+}
