@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
 import Landing from "./Components/landing";
 import ProdcustPage from "./Components/productsPage";
 import Product from "./Components/product";
@@ -61,17 +66,24 @@ const App = () => {
   console.log("Logged in: ", loggedIn);
   let routes = (
     <>
-      {" "}
-      <Route
-        exact
-        path="/products"
-        render={(props) => <ProdcustPage closeMenu={closeMenu} />}
-      />
-      <Route
-        exact
-        path="/"
-        render={(props) => <Landing closeMenu={closeMenu} />}
-      />
+      {loggedIn ? (
+        <Route
+          exact
+          path="/products"
+          render={(props) => <ProdcustPage closeMenu={closeMenu} />}
+        />
+      ) : (
+        <Redirect to="/" />
+      )}
+      {loggedIn ? (
+        <Redirect to="/products" />
+      ) : (
+        <Route
+          exact
+          path="/"
+          render={(props) => <Landing closeMenu={closeMenu} />}
+        />
+      )}
       <Route
         path="/product/:id"
         render={(props) => (
@@ -125,28 +137,44 @@ const App = () => {
         {loggedIn && (
           <>
             <div>
-              <Link to="/" className="navLink">
-                Home
-              </Link>
-            </div>
-            <div>
               <Link to="/products" className="navLink">
-                Products
+                Brand
               </Link>
             </div>
+
             <section>
-              <div className="toggleNav navLink" onClick={() => toggleMenu()}>
-                {name}
+              {/* <div>
+                <Link to="/products" className="navLink">
+                  Products
+                </Link>
+              </div> */}
+              <div>
+                <Link to="/account/edit" className="navLink">
+                  Edit Account {name}
+                </Link>
               </div>
+              <div>
+                <Link to="/orders" className="navLink">
+                  Your Orders
+                </Link>
+              </div>
+              <div>
+                <Link to="/cart" className="navLink">
+                  Cart
+                </Link>
+              </div>
+              <div onClick={() => signout()} className="signoutText navLink">
+                Sign Out
+              </div>
+              {/* <div className="toggleNav navLink" onClick={() => toggleMenu()}>
+                {name}
+              </div> */}
             </section>
-            <div id="navMenu" className={showMenu ? "" : "collapsed"}>
+            {/* <div id="navMenu" className={showMenu ? "" : "collapsed"}>
               <Link to="/account/edit">Edit Account</Link>
               <Link to="/orders">Your Orders</Link>
               <Link to="/cart">Cart</Link>
-              <div onClick={() => signout()} className="signoutText">
-                Sign Out
-              </div>
-            </div>
+            </div> */}
           </>
         )}
         {!loggedIn && (
@@ -156,12 +184,13 @@ const App = () => {
                 Home
               </Link>
             </div>
-            <div>
-              <Link to="/products" className="navLink">
-                Products
-              </Link>
-            </div>
+
             <section>
+              <div>
+                <Link to="/products" className="navLink">
+                  Products
+                </Link>
+              </div>
               <div>
                 <Link to="/signup" className="navLink">
                   Sign Up
