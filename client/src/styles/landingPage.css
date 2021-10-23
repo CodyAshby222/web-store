@@ -1,11 +1,13 @@
 .landing__mainContent {
   /* margin-top: 3.5em; */
+  margin: 0 auto;
 
   display: flex;
+  height: 86.9vh;
 
-  height: 87vh;
+  max-width: 1400px;
 
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 /* content container */
@@ -66,4 +68,13 @@
   height: 800px;
 
   object-fit: cover;
+}
+
+@media only screen and (max-width: 800px) {
+  .landing__images {
+    display: none;
+  }
+  .orangeBackgroundImg {
+    display: none;
+  }
 }

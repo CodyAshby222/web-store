@@ -6,7 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Landing from "./Components/landing";
-import ProdcustPage from "./Components/productsPage";
+import ProductsPage from "./Components/productsPage";
 import Product from "./Components/product";
 import Login from "./Components/login";
 import Signup from "./Components/signup";
@@ -70,7 +70,7 @@ const App = () => {
         <Route
           exact
           path="/products"
-          render={(props) => <ProdcustPage closeMenu={closeMenu} />}
+          render={(props) => <ProductsPage closeMenu={closeMenu} />}
         />
       ) : (
         <Redirect to="/" />
@@ -134,20 +134,32 @@ const App = () => {
   return (
     <Router>
       <nav>
+        <div>
+          <Link to="/" style={{}}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <img
+                style={{ width: 45, marginLeft: 30 }}
+                src="/mask_logo.png"
+                alt="Get Masked Logo"
+              />
+              <div className="navTitle">GetMasked</div>
+            </div>
+          </Link>
+        </div>
         {loggedIn && (
           <>
-            <div>
+            {/* <div>
               <Link to="/products" className="navLink">
                 Brand
               </Link>
-            </div>
-
+            </div> */}
             <section>
-              {/* <div>
-                <Link to="/products" className="navLink">
-                  Products
-                </Link>
-              </div> */}
               <div>
                 <Link to="/account/edit" className="navLink">
                   Edit Account {name}
@@ -166,31 +178,12 @@ const App = () => {
               <div onClick={() => signout()} className="signoutText navLink">
                 Sign Out
               </div>
-              {/* <div className="toggleNav navLink" onClick={() => toggleMenu()}>
-                {name}
-              </div> */}
             </section>
-            {/* <div id="navMenu" className={showMenu ? "" : "collapsed"}>
-              <Link to="/account/edit">Edit Account</Link>
-              <Link to="/orders">Your Orders</Link>
-              <Link to="/cart">Cart</Link>
-            </div> */}
           </>
         )}
         {!loggedIn && (
           <>
-            <div>
-              <Link to="/" className="navLink">
-                Home
-              </Link>
-            </div>
-
             <section>
-              <div>
-                <Link to="/products" className="navLink">
-                  Products
-                </Link>
-              </div>
               <div>
                 <Link to="/signup" className="navLink">
                   Sign Up
