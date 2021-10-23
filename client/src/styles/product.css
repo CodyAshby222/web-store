@@ -1,47 +1,129 @@
 /* Product page */
 
+.mainSection {
+  margin: 12% 8%;
+}
+
 .product {
   margin: auto;
-  max-width: 1000px;
+  max-width: 690px;
   display: grid;
   grid-template-rows: 3fr 1fr;
   grid-template-columns: 4fr 3fr;
   grid-gap: 1em;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 1.5%;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
 }
 
-.product > img {
-  width: 100%;
-  margin-top: 3em;
+
+.productImage {
+  display: flex;
+  align-self: center;
+  width: 60%;
+  max-width: 60%;
+  margin: 85px 0 0 20px;
 }
 
 .product > .tableContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3em;
+  max-width: 280px;
+  margin-left: 2.5em;
+  margin-top: 55px;
 }
 
-.tableContainer table,
-.tableContainer td,
-.tableContainer th {
-  border: 1px solid black;
-  border-collapse: collapse;
+.tableContainer td {
+  border: 1px solid rgb(213, 208, 208);
+  border-radius: 6px;
+  box-shadow: 0 1px 12px rgba(130, 130, 130, 0.2);
+  background-color: white;
 }
-td,
-th {
-  padding: 0.3em;
+
+td, th {
+  font-weight: 700;
+  padding: 0.5em;
 }
+
 .returnBtnDiv {
-  margin-left: 3em;
+  display: flex;
+  align-self: center;
+  margin: 0 0 10px 2.7em;
+  max-width: 66px;
+}
+
+.returnBtn:hover {
+  cursor: pointer;
+  color: rgb(223, 148, 8);
+}
+
+.returnBtn {
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  margin: 18px 0 0 0;
+  min-width: 79px;
+  color: orange;
+  font-size: 17px;
+}
+
+.addBtn:hover {
+  cursor: pointer;
+  background-color: rgb(223, 148, 8);
+}
+
+.addBtn {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 8px;
+  background-color: orange;
+  max-height: 12px;
+  width: 125px;
+  padding: 15px;
+  border-radius: 7%;
+  color: black;
+}
+
+.goBtn:hover {
+  cursor: pointer;
+  color: rgb(223, 148, 8);
+}
+
+
+.goBtn {
+  display: flex;
+  align-self: center;
+  width: 95px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 17px;
+  margin: 0 10px 0 0;
+  text-decoration: none;
+  color: orange;
 }
 
 .addToCartDiv {
   text-align: center;
   margin-right: 3em;
+  display: flex;
 }
+
 .addToCartDiv > a {
   margin-top: 1em;
   display: block;
+}
+
+.itemName {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 21px;
+  margin-bottom: 35px;
 }
 
 #itemAddedPrompt {
@@ -55,7 +137,8 @@ th {
   font-weight: bold;
   color: white;
   position: fixed;
-  top: 3.5em;
+  top: 75px;
+  left: 0;
   overflow: hidden;
   transition: height 0.3s ease;
 }

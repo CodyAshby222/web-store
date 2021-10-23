@@ -62,44 +62,47 @@ const Product = ({ itemID, loggedIn, userKey }) => {
   }
   return (
     <section className="mainSection">
-      <h1 className="pageTitle">{name}</h1>
       <div id="itemAddedPrompt" className={showPrompt ? "" : "disabled"}>
         Item Added to Cart
       </div>
       <section className="product">
         <div className="tableContainer">
-          <table>
+          <div className="itemName">
+            {name}
+          </div>
+          <table className="table">
             <tbody>
-              <tr>
+              <tr className="table-row">
                 <td>Weight</td>
                 <td>{weight} oz</td>
               </tr>
-              <tr>
+              <tr className="table-row">
                 <td>Protection</td>
                 <td>{protection}%</td>
               </tr>
-              <tr>
+              <tr className="table-row">
                 <td>Rating</td>
                 <td>{rating}</td>
               </tr>
-              <tr>
+              <tr className="table-row">
                 <td>Price</td>
                 <td>${price}</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <img src={"/" + imgSrc} />
+        <img src={"/" + imgSrc} className="productImage"/>
         <div className="returnBtnDiv">
-          <button onClick={backToHome}>Go Back</button>
+          <div onClick={backToHome} className="returnBtn">Go Back</div>
         </div>
         <div className="addToCartDiv">
-          <button onClick={addToCart}>Add to Cart</button>
-          <p className="link" onClick={() => routeToCart()}>
+          <div className="goBtn" onClick={() => routeToCart()}>
             Go to Cart
-          </p>
+          </div>
+          <div onClick={addToCart} className="addBtn">Add to Cart</div>
         </div>
       </section>
+      <img className="orange-bg" src="/orange_background.png" alt="Orange Background" />
     </section>
   );
 };
