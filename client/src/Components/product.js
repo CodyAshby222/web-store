@@ -61,7 +61,7 @@ const Product = ({ itemID, loggedIn, userKey }) => {
     return <Redirect to={redirect} />;
   }
   return (
-    <section className="mainSection">
+    <section className="mainProductSection">
       <div id="itemAddedPrompt" className={showPrompt ? "" : "disabled"}>
         Item Added to Cart
       </div>
