@@ -6,3 +6,12 @@
   z-index: -1;
   width: 650px;
 }
+
+.lg-orange-bg {
+  position: absolute;
+  top: 135px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  width: 1200px;
+}
