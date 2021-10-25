@@ -135,7 +135,7 @@ const App = () => {
     <Router>
       <nav>
         <div>
-          <Link to="/" style={{}}>
+          <Link to="/products" style={{}}>
             <div
               style={{
                 display: "flex",

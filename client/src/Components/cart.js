@@ -44,7 +44,7 @@ const Cart = ({ closeMenu, loggedIn, userKey }) => {
         body: JSON.stringify({}),
       }).then((response) => {
         setCartList([]);
-        checkedOut(true);
+        // checkedOut(true);
       });
     });
   };
@@ -68,7 +68,7 @@ const Cart = ({ closeMenu, loggedIn, userKey }) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ cart: cartList }),
     });
-  },[]);
+  }, []);
 
   if (!loggedIn) {
     return <Redirect to="/" />;
@@ -109,10 +109,7 @@ const Cart = ({ closeMenu, loggedIn, userKey }) => {
           </p>
           <div className="buttonContainer">
             {" "}
-            <button
-              className={checkedOut ? "hidden" : ""}
-              onClick={() => checkout()}
-            >
+            <button className={checkedOut ? "hidden" : ""} onClick={()=>checkout()}>
               Check Out
             </button>{" "}
           </div>
