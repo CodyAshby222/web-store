@@ -45,7 +45,8 @@
   background-color: white;
 }
 
-td, th {
+td,
+th {
   font-weight: 700;
   padding: 0.5em;
 }
@@ -99,7 +100,6 @@ td, th {
   color: rgb(223, 148, 8);
 }
 
-
 .goBtn {
   display: flex;
   align-self: center;
@@ -141,7 +141,7 @@ td, th {
   font-weight: bold;
   color: white;
   position: fixed;
-  top: 75px;
+  top: 100px;
   left: 0;
   overflow: hidden;
   transition: height 0.3s ease;
