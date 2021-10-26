@@ -162,12 +162,12 @@ const App = () => {
             <section>
               <div>
                 <Link to="/account/edit" className="navLink">
-                  Edit Account {name}
+                  Account
                 </Link>
               </div>
               <div>
                 <Link to="/orders" className="navLink">
-                  Your Orders
+                  Orders
                 </Link>
               </div>
               <div>
