@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 const OrderItem = ({ orderItem }) => {
   const formatDate = (date) => {
     return (
@@ -8,7 +9,7 @@ const OrderItem = ({ orderItem }) => {
   };
 
   return (
-    <tr>
+    <tr className="orderRow">
       <td>{orderItem.name}</td>
       <td>{orderItem.quantity}</td>
       <td>{formatDate(new Date(orderItem.date))}</td>

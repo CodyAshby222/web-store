@@ -44,13 +44,13 @@ const Cart = ({ closeMenu, loggedIn, userKey }) => {
         body: JSON.stringify({}),
       }).then((response) => {
         setCartList([]);
-        checkedOut(true);
       });
     });
   };
 
   const changeItemQuantity = (itemID, newQuantity) => {
-    const cartList = cartList.map((item) => {
+    const newArr = [...cartList];
+    newArr.map((item) => {
       if (item.itemID == itemID) {
         item.quantity = newQuantity;
         console.log(item);
@@ -59,7 +59,8 @@ const Cart = ({ closeMenu, loggedIn, userKey }) => {
     });
     setRedirect(null);
     setCheckedOut(false);
-    return { cartList };
+    setCartList(newArr);
+    return { newArr };
   };
 
   useEffect(() => {
@@ -68,7 +69,7 @@ const Cart = ({ closeMenu, loggedIn, userKey }) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ cart: cartList }),
     });
-  },[]);
+  }, []);
 
   if (!loggedIn) {
     return <Redirect to="/" />;
@@ -78,8 +79,8 @@ const Cart = ({ closeMenu, loggedIn, userKey }) => {
   }
   return (
     <section className="mainSection">
-      <h1 className="pageTitle">Cart</h1>
       <section className="cartContainer">
+        <h1 className="shoppingCartTitle">Shopping Cart</h1>
         <div className="container">
           <table className={checkedOut ? "hidden" : ""}>
             <thead>
@@ -110,7 +111,7 @@ const Cart = ({ closeMenu, loggedIn, userKey }) => {
           <div className="buttonContainer">
             {" "}
             <button
-              className={checkedOut ? "hidden" : ""}
+              className={checkedOut ? "hidden" : "orange-btn"}
               onClick={() => checkout()}
             >
               Check Out
@@ -118,6 +119,11 @@ const Cart = ({ closeMenu, loggedIn, userKey }) => {
           </div>
         </div>
       </section>
+      <img
+        className="md-orange-bg"
+        src="/orange_background.png"
+        alt="Orange Background"
+      />
     </section>
   );
 };

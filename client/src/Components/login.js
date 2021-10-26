@@ -25,7 +25,7 @@ const Login = ({ action }) => {
         console.log(response);
         if (response) {
           action(response.key, response.name, response.email);
-          setRedirect((redirect = "/"));
+          setRedirect("/products");
         } else {
           displayLoginError();
         }

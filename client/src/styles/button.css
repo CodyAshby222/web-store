@@ -18,3 +18,7 @@ button {
 .orange-btn:hover {
   background-color: #e0941a;
 }
+
+.btn-size {
+  width: 10%;
+}

@@ -25,9 +25,11 @@ const App = () => {
     setKey(key);
     setName(name);
     setEmail(email);
-
-    isValid();
   };
+
+  useEffect(() => {
+    isValid();
+  }, [key]);
 
   const updateUser = (name, email) => {
     setName(name);
@@ -135,7 +137,7 @@ const App = () => {
     <Router>
       <nav>
         <div>
-          <Link to="/" style={{}}>
+          <Link to="/products" style={{}}>
             <div
               style={{
                 display: "flex",
@@ -162,12 +164,12 @@ const App = () => {
             <section>
               <div>
                 <Link to="/account/edit" className="navLink">
-                  Edit Account {name}
+                  Account
                 </Link>
               </div>
               <div>
                 <Link to="/orders" className="navLink">
-                  Your Orders
+                  Orders
                 </Link>
               </div>
               <div>
