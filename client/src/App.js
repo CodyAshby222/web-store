@@ -25,9 +25,11 @@ const App = () => {
     setKey(key);
     setName(name);
     setEmail(email);
-
-    isValid();
   };
+
+  useEffect(() => {
+    isValid();
+  }, [key]);
 
   const updateUser = (name, email) => {
     setName(name);
