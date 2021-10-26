@@ -31,7 +31,7 @@ nav a,
 .navLink {
   background-color: #fff;
   color: black;
-  transition: background-color 0.2s ease;
+  /* transition: background-color 0.2s ease; */
 }
 
 .navLink:hover {
@@ -86,4 +86,18 @@ nav a,
   font-size: 30px;
   margin-left: 20px;
   font-weight: 700;
+}
+
+@media all and (max-width: 800px) {
+  .navTitle {
+    display: none;
+  }
+  .navLink {
+    font-size: 14px;
+  }
+  nav a,
+  .signoutText,
+  .toggleNav {
+    width: 6.5em;
+  }
 }

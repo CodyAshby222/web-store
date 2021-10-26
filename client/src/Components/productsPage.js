@@ -24,7 +24,7 @@ const ProdcutsPage = ({ closeMenu }) => {
     );
   }
   return (
-    <section className="mainSection">
+    <section className="mainSection hide-overflow">
       <h1 className="pageTitle">Products</h1>
       <div id="itemContainer">
         {itemList.map((entry) => (

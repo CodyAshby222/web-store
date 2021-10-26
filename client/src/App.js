@@ -51,7 +51,6 @@ const App = () => {
   };
 
   const signout = () => {
-    console.log("Signed out");
     setName("");
     setEmail("");
     setKey("");
@@ -59,33 +58,14 @@ const App = () => {
     setShowMenu(false);
   };
 
-  const toggleMenu = () => {
-    console.log(showMenu);
-
-    setShowMenu(!showMenu);
-  };
-
-  console.log("Logged in: ", loggedIn);
   let routes = (
     <>
-      {loggedIn ? (
-        <Route
-          exact
-          path="/products"
-          render={(props) => <ProductsPage closeMenu={closeMenu} />}
-        />
-      ) : (
-        <Redirect to="/" />
-      )}
-      {loggedIn ? (
-        <Redirect to="/products" />
-      ) : (
-        <Route
-          exact
-          path="/"
-          render={(props) => <Landing closeMenu={closeMenu} />}
-        />
-      )}
+      <Route
+        exact
+        path="/products"
+        render={() => <ProductsPage closeMenu={closeMenu} />}
+      />
+      <Route exact path="/" render={() => <Landing closeMenu={closeMenu} />} />
       <Route
         path="/product/:id"
         render={(props) => (
@@ -96,16 +76,12 @@ const App = () => {
           />
         )}
       />
-      <Route
-        exact
-        path="/login"
-        render={(props) => <Login action={changeKey} />}
-      />
+      <Route exact path="/login" render={() => <Login action={changeKey} />} />
       <Route exact path="/signup" render={(props) => <Signup />} />
       <Route
         exact
         path="/account/edit"
-        render={(props) => (
+        render={() => (
           <EditAccount
             name={name}
             email={email}
@@ -119,14 +95,14 @@ const App = () => {
       <Route
         exact
         path="/cart"
-        render={(props) => (
+        render={() => (
           <Cart userKey={key} loggedIn={loggedIn} closeMenu={closeMenu} />
         )}
       />
       <Route
         exact
         path="/orders"
-        render={(props) => (
+        render={() => (
           <Orders userKey={key} loggedIn={loggedIn} closeMenu={closeMenu} />
         )}
       />{" "}
@@ -137,7 +113,7 @@ const App = () => {
     <Router>
       <nav>
         <div>
-          <Link to="/products" style={{}}>
+          <Link to={loggedIn ? "/products" : "/"}>
             <div
               style={{
                 display: "flex",
@@ -156,11 +132,6 @@ const App = () => {
         </div>
         {loggedIn && (
           <>
-            {/* <div>
-              <Link to="/products" className="navLink">
-                Brand
-              </Link>
-            </div> */}
             <section>
               <div>
                 <Link to="/account/edit" className="navLink">
