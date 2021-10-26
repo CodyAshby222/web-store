@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-
-const OrderItem = ({ orderItem }) => {
+const OrderItem = ({ orderItem, index }) => {
   const formatDate = (date) => {
     return (
       date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear()
