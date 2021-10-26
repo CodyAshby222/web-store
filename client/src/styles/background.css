@@ -24,3 +24,21 @@
   z-index: -1;
   width: 900px;
 }
+
+@media all and (max-width: 1201px) {
+  .lg-orange-bg {
+    display: none;
+  }
+}
+
+@media all and (max-width: 901px) {
+  .md-orange-bg {
+    display: none;
+  }
+}
+
+@media all and (max-width: 651px) {
+  .orange-bg {
+    display: none;
+  }
+}
