@@ -30,14 +30,15 @@ const Orders = ({ closeMenu, loggedIn, userKey }) => {
   }
   return (
     <section className="mainSection">
-      <h1 className="pageTitle">Orders</h1>
+      <img className="orange-bg" src="/orange_background.png" />
       <section id="orderContainer" className="tableContainer">
-        <table>
+        <h1 className="pageTitleOrders">Orders</h1>
+        <table className="ordersTable">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Quantity</th>
-              <th>Date</th>
+              <td>Name</td>
+              <td>Quantity</td>
+              <td>Date</td>
             </tr>
           </thead>
           <tbody>
@@ -46,6 +47,7 @@ const Orders = ({ closeMenu, loggedIn, userKey }) => {
             ))}
           </tbody>
         </table>
+        <div className="orange-btn btn-size">Go To Products</div>
       </section>
     </section>
   );
