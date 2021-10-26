@@ -61,11 +61,11 @@ const Product = ({ itemID, loggedIn, userKey }) => {
     return <Redirect to={redirect} />;
   }
   return (
-    <section className="mainProductSection">
+    <div className="mainProductSection">
       <div id="itemAddedPrompt" className={showPrompt ? "" : "disabled"}>
         Item Added to Cart
       </div>
-      <section className="product">
+      <div className="product">
         <div className="tableContainer">
           <div className="itemName">
             {name}
@@ -101,9 +101,9 @@ const Product = ({ itemID, loggedIn, userKey }) => {
           </div>
           <div onClick={addToCart} className="addBtn">Add to Cart</div>
         </div>
-      </section>
+      </div>
       <img className="orange-bg" src="/orange_background.png" alt="Orange Background" />
-    </section>
+    </div>
   );
 };
 
