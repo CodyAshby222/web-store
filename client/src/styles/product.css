@@ -1,5 +1,5 @@
 /* Product page */
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 310px) {
   .mainProductSection {
     margin: 12% 8%;
   }
@@ -44,7 +44,163 @@
   .returnBtnDiv {
     display: flex;
     align-self: center;
-    margin: 0 0 10px 2.7em;
+    margin: 0 40% 10px 40%;
+    max-width: 66px;
+  }
+  
+  .returnBtn:hover {
+    cursor: pointer;
+    color: rgb(223, 148, 8);
+  }
+  
+  .returnBtn {
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    margin: 10px 0 0 0;
+    min-width: 79px;
+    color: orange;
+    font-size: 8px;
+  }
+  
+  .addBtn:hover {
+    cursor: pointer;
+    background-color: rgb(223, 148, 8);
+  }
+  
+  .addBtn {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 7px;
+    line-height: 7px;
+    background-color: orange;
+    max-height: 12px;
+    width: 105px;
+    padding: 10px;
+    border-radius: 6%;
+    color: black;
+  }
+  
+  .goBtn:hover {
+    cursor: pointer;
+    color: rgb(223, 148, 8);
+  }
+  
+  
+  .goBtn {
+    display: flex;
+    align-self: center;
+    width: 69px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 8px;
+    margin: 0 10px 0 0;
+    text-decoration: none;
+    color: orange;
+  }
+  
+  .addToCartDiv {
+    text-align: center;
+    margin: 0 25% 2em 25%;
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+  }
+  
+  .addToCartDiv > a {
+    margin-top: 1em;
+    display: block;
+  }
+  
+  .itemName {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  #itemAddedPrompt {
+    width: 100%;
+    background-color: #3f82f9;
+    height: 4em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    position: fixed;
+    top: 75px;
+    left: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+  
+  #itemAddedPrompt.disabled {
+    height: 0;
+  }
+  
+  .link {
+    cursor: pointer;
+    color: #0000ee;
+    text-decoration: underline;
+  }
+  .link:visited {
+    color: #551a8b;
+  }
+}
+
+@media screen and (min-width: 310px) and (max-width: 550px) {
+  .mainProductSection {
+    margin: 12% 8%;
+  }
+  
+  .product {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 1.5%;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+    padding: 2px;
+  }
+  
+  .productImage {
+    display: flex;
+    align-self: center;
+    width: 52%;
+    max-width: 52%;
+    margin: 25px auto;
+  }
+  
+  .product > .tableContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 160px;
+    margin: auto auto;
+  }
+  
+  .tableContainer td {
+    border: 1px solid rgb(213, 208, 208);
+    border-radius: 6px;
+    box-shadow: 0 1px 12px rgba(130, 130, 130, 0.2);
+    background-color: white;
+  }
+  
+  td, th {
+    font-weight: 700;
+    padding: 0.3em;
+    font-size: 10px;
+  }
+  
+  .returnBtnDiv {
+    display: flex;
+    align-self: center;
+    margin: 0 40% 10px 40%;
     max-width: 66px;
   }
 
@@ -103,11 +259,8 @@
   }
 
   .addToCartDiv {
-    position: relative;
-    bottom: 30px;
-    right: 1px;
     text-align: center;
-    margin-right: 3em;
+    margin: 0 25% 2em 25%;
     display: flex;
     justify-content: flex-end;
     align-self: flex-end;
