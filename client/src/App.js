@@ -31,6 +31,10 @@ const App = () => {
     isValid();
   }, [key]);
 
+  // useEffect(() => {
+  //   console.log(key);
+  // }, [key]);
+
   const updateUser = (name, email) => {
     setName(name);
     setEmail(email);
@@ -60,11 +64,15 @@ const App = () => {
 
   let routes = (
     <>
-      <Route
-        exact
-        path="/products"
-        render={() => <ProductsPage closeMenu={closeMenu} />}
-      />
+      {loggedIn ? (
+        <Route
+          exact
+          path="/products"
+          render={() => <ProductsPage closeMenu={closeMenu} />}
+        />
+      ) : (
+        <Redirect to="/" />
+      )}
       <Route exact path="/" render={() => <Landing closeMenu={closeMenu} />} />
       <Route
         path="/product/:id"
@@ -108,7 +116,6 @@ const App = () => {
       />{" "}
     </>
   );
-
   return (
     <Router>
       <nav>
