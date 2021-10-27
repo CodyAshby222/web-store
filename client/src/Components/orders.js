@@ -31,7 +31,7 @@ const Orders = ({ closeMenu, loggedIn, userKey }) => {
   return (
     <section className="mainSection">
       <img className="orange-bg" src="/orange_background.png" />
-      <section id="orderContainer" className="tableContainer">
+      <section id="orderContainer" className="ordersTableContainer">
         <h1 className="pageTitleOrders">Orders</h1>
         <table className="ordersTable">
           <thead>
