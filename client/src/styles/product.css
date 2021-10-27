@@ -3,14 +3,14 @@
   .mainProductSection {
     margin: 12% 8%;
   }
-  
+
   .product {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 1.5%;
     box-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
     padding: 2px;
   }
-  
+
   .productImage {
     display: flex;
     align-self: center;
@@ -18,7 +18,7 @@
     max-width: 52%;
     margin: 25px auto;
   }
-  
+
   .product > .tableContainer {
     display: flex;
     flex-direction: column;
@@ -26,32 +26,33 @@
     max-width: 160px;
     margin: auto auto;
   }
-  
+
   .tableContainer td {
     border: 1px solid rgb(213, 208, 208);
     border-radius: 6px;
     box-shadow: 0 1px 12px rgba(130, 130, 130, 0.2);
     background-color: white;
   }
-  
-  td, th {
+
+  td,
+  th {
     font-weight: 700;
     padding: 0.3em;
     font-size: 10px;
   }
-  
+
   .returnBtnDiv {
     display: flex;
     align-self: center;
     margin: 0 0 10px 2.7em;
     max-width: 66px;
   }
-  
+
   .returnBtn:hover {
     cursor: pointer;
     color: rgb(223, 148, 8);
   }
-  
+
   .returnBtn {
     text-align: left;
     font-family: "Montserrat", sans-serif;
@@ -61,12 +62,12 @@
     color: orange;
     font-size: 12px;
   }
-  
+
   .addBtn:hover {
     cursor: pointer;
     background-color: rgb(223, 148, 8);
   }
-  
+
   .addBtn {
     display: flex;
     align-self: center;
@@ -83,13 +84,12 @@
     border-radius: 6%;
     color: black;
   }
-  
+
   .goBtn:hover {
     cursor: pointer;
     color: rgb(223, 148, 8);
   }
-  
-  
+
   .goBtn {
     display: flex;
     align-self: center;
@@ -101,7 +101,7 @@
     text-decoration: none;
     color: orange;
   }
-  
+
   .addToCartDiv {
     position: relative;
     bottom: 30px;
@@ -112,12 +112,12 @@
     justify-content: flex-end;
     align-self: flex-end;
   }
-  
+
   .addToCartDiv > a {
     margin-top: 1em;
     display: block;
   }
-  
+
   .itemName {
     font-family: "Montserrat", sans-serif;
     font-weight: 900;
@@ -126,7 +126,7 @@
     margin-top: 15px;
     margin-bottom: 15px;
   }
-  
+
   #itemAddedPrompt {
     width: 100%;
     background-color: #3f82f9;
@@ -143,11 +143,11 @@
     overflow: hidden;
     transition: height 0.3s ease;
   }
-  
+
   #itemAddedPrompt.disabled {
     height: 0;
   }
-  
+
   .link {
     cursor: pointer;
     color: #0000ee;
@@ -162,7 +162,7 @@
     margin: 12% 8%;
     /* background-color: #0000ee; */
   }
-  
+
   .product {
     /* margin: auto; */
     /* max-width: 690px; */
@@ -174,7 +174,7 @@
     border-radius: 1.5%;
     box-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
   }
-  
+
   .productImage {
     display: flex;
     align-self: center;
@@ -182,7 +182,7 @@
     max-width: 52%;
     margin: 53px 0 0 26px;
   }
-  
+
   .product > .tableContainer {
     display: flex;
     flex-direction: column;
@@ -191,32 +191,33 @@
     margin-left: 1.5em;
     /* margin-top: 55px; */
   }
-  
+
   .tableContainer td {
     border: 1px solid rgb(213, 208, 208);
     border-radius: 6px;
     box-shadow: 0 1px 12px rgba(130, 130, 130, 0.2);
     background-color: white;
   }
-  
-  td, th {
+
+  td,
+  th {
     font-weight: 700;
     padding: 0.3em;
     font-size: 10px;
   }
-  
+
   .returnBtnDiv {
     display: flex;
     align-self: center;
     margin: 0 0 10px 2.7em;
     max-width: 66px;
   }
-  
+
   .returnBtn:hover {
     cursor: pointer;
     color: rgb(223, 148, 8);
   }
-  
+
   .returnBtn {
     text-align: left;
     font-family: "Montserrat", sans-serif;
@@ -226,12 +227,12 @@
     color: orange;
     font-size: 12px;
   }
-  
+
   .addBtn:hover {
     cursor: pointer;
     background-color: rgb(223, 148, 8);
   }
-  
+
   .addBtn {
     display: flex;
     align-self: center;
@@ -248,13 +249,12 @@
     border-radius: 6%;
     color: black;
   }
-  
+
   .goBtn:hover {
     cursor: pointer;
     color: rgb(223, 148, 8);
   }
-  
-  
+
   .goBtn {
     display: flex;
     align-self: center;
@@ -266,18 +266,18 @@
     text-decoration: none;
     color: orange;
   }
-  
+
   .addToCartDiv {
     text-align: center;
     margin-right: 3em;
     display: flex;
   }
-  
+
   .addToCartDiv > a {
     margin-top: 1em;
     display: block;
   }
-  
+
   .itemName {
     font-family: "Montserrat", sans-serif;
     font-weight: 900;
@@ -285,7 +285,7 @@
     margin-bottom: 25px;
     margin-top: 15px;
   }
-  
+
   #itemAddedPrompt {
     width: 100%;
     background-color: #3f82f9;
@@ -302,11 +302,11 @@
     overflow: hidden;
     transition: height 0.3s ease;
   }
-  
+
   #itemAddedPrompt.disabled {
     height: 0;
   }
-  
+
   .link {
     cursor: pointer;
     color: #0000ee;
@@ -318,158 +318,158 @@
 }
 
 @media screen and (min-width: 600px) {
-.mainProductSection {
-  margin: 12% 8%;
-}
+  .mainProductSection {
+    margin: 12% 8%;
+  }
 
-.product {
-  margin: auto;
-  max-width: 690px;
-  display: grid;
-  grid-template-rows: 3fr 1fr;
-  grid-template-columns: 4fr 3fr;
-  grid-gap: 1em;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 1.5%;
-  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
-}
+  .product {
+    margin: auto;
+    max-width: 690px;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 4fr 3fr;
+    grid-gap: 1em;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 1.5%;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+  }
 
-.productImage {
-  display: flex;
-  align-self: center;
-  width: 60%;
-  max-width: 60%;
-  margin: 85px 0 0 20px;
-}
+  .productImage {
+    display: flex;
+    align-self: center;
+    width: 60%;
+    max-width: 60%;
+    margin: 85px 0 0 20px;
+  }
 
-.product > .tableContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 280px;
-  margin-left: 2.5em;
-  margin-top: 55px;
-}
+  .product > .tableContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 280px;
+    margin-left: 2.5em;
+    margin-top: 55px;
+  }
 
-.tableContainer td {
-  border: 1px solid rgb(213, 208, 208);
-  border-radius: 6px;
-  box-shadow: 0 1px 12px rgba(130, 130, 130, 0.2);
-  background-color: white;
-}
+  .tableContainer td {
+    border: 1px solid rgb(213, 208, 208);
+    border-radius: 6px;
+    box-shadow: 0 1px 12px rgba(130, 130, 130, 0.2);
+    background-color: white;
+  }
 
-td,
-th {
-  font-weight: 700;
-  padding: 0.5em;
-}
+  td,
+  th {
+    font-weight: 700;
+    padding: 0.5em;
+  }
 
-.returnBtnDiv {
-  display: flex;
-  align-self: center;
-  margin: 0 0 10px 2.7em;
-  max-width: 66px;
-}
+  .returnBtnDiv {
+    display: flex;
+    align-self: center;
+    margin: 0 0 10px 2.7em;
+    max-width: 66px;
+  }
 
-.returnBtn:hover {
-  cursor: pointer;
-  color: rgb(223, 148, 8);
-}
+  .returnBtn:hover {
+    cursor: pointer;
+    color: rgb(223, 148, 8);
+  }
 
-.returnBtn {
-  text-align: left;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  margin: 10px 0 0 0;
-  min-width: 79px;
-  color: orange;
-  font-size: 17px;
-}
+  .returnBtn {
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    margin: 10px 0 0 0;
+    min-width: 79px;
+    color: orange;
+    font-size: 17px;
+  }
 
-.addBtn:hover {
-  cursor: pointer;
-  background-color: rgb(223, 148, 8);
-}
+  .addBtn:hover {
+    cursor: pointer;
+    background-color: rgb(223, 148, 8);
+  }
 
-.addBtn {
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: 14px;
-  line-height: 8px;
-  background-color: orange;
-  max-height: 12px;
-  width: 125px;
-  padding: 15px;
-  border-radius: 7%;
-  color: black;
-}
+  .addBtn {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 8px;
+    background-color: orange;
+    max-height: 12px;
+    width: 125px;
+    padding: 15px;
+    border-radius: 7%;
+    color: black;
+  }
 
-.goBtn:hover {
-  cursor: pointer;
-  color: rgb(223, 148, 8);
-}
+  .goBtn:hover {
+    cursor: pointer;
+    color: rgb(223, 148, 8);
+  }
 
-.goBtn {
-  display: flex;
-  align-self: center;
-  width: 95px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: 17px;
-  margin: 0 10px 0 0;
-  text-decoration: none;
-  color: orange;
-}
+  .goBtn {
+    display: flex;
+    align-self: center;
+    width: 95px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 17px;
+    margin: 0 10px 0 0;
+    text-decoration: none;
+    color: orange;
+  }
 
-.addToCartDiv {
-  text-align: center;
-  margin-right: 3em;
-  display: flex;
-}
+  .addToCartDiv {
+    text-align: center;
+    margin-right: 3em;
+    display: flex;
+  }
 
-.addToCartDiv > a {
-  margin-top: 1em;
-  display: block;
-}
+  .addToCartDiv > a {
+    margin-top: 1em;
+    display: block;
+  }
 
-.itemName {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: 21px;
-  margin-bottom: 35px;
-}
+  .itemName {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 21px;
+    margin-bottom: 35px;
+  }
 
-#itemAddedPrompt {
-  width: 100%;
-  background-color: #3f82f9;
-  height: 4em;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-weight: bold;
-  color: white;
-  position: fixed;
-  top: 100px;
-  left: 0;
-  overflow: hidden;
-  transition: height 0.3s ease;
-}
+  #itemAddedPrompt {
+    width: 100%;
+    background-color: #3f82f9;
+    height: 4em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
 
-#itemAddedPrompt.disabled {
-  height: 0;
-}
+  #itemAddedPrompt.disabled {
+    height: 0;
+  }
 
-.link {
-  cursor: pointer;
-  color: #0000ee;
-  text-decoration: underline;
-}
-.link:visited {
-  color: #551a8b;
-}
+  .link {
+    cursor: pointer;
+    color: #0000ee;
+    text-decoration: underline;
+  }
+  .link:visited {
+    color: #551a8b;
+  }
 }
