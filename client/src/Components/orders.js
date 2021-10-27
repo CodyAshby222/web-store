@@ -42,7 +42,7 @@ const Orders = ({ closeMenu, loggedIn, userKey }) => {
             </tr>
           </thead>
           <tbody>
-            {orderList.map((orderItem,index) => (
+            {orderList.map((orderItem, index) => (
               <OrderItem orderItem={orderItem} index={index} />
             ))}
           </tbody>
