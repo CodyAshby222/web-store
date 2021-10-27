@@ -18,7 +18,9 @@
   position: absolute;
 }
 
-.tableContainer {
+.ordersTableContainer {
+  width: 1082px;
+
   padding-left: 50px;
   padding-right: 50px;
 
