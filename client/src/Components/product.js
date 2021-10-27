@@ -29,7 +29,7 @@ const Product = ({ itemID, loggedIn, userKey }) => {
   }, []);
 
   const backToHome = () => {
-    setRedirect("/");
+    setRedirect("/products");
   };
 
   const addToCart = () => {
