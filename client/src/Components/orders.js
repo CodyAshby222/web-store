@@ -47,7 +47,13 @@ const Orders = ({ closeMenu, loggedIn, userKey }) => {
             ))}
           </tbody>
         </table>
-        <div className="orange-btn btn-size">Go To Products</div>
+
+        <div
+          className="orange-btn btn-size"
+          onClick={() => <Redirect to="/products"></Redirect>}
+        >
+          Go To Products
+        </div>
       </section>
     </section>
   );
